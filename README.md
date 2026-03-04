@@ -1,43 +1,46 @@
-# RAG Chat PDF – Assistant style ChatGPT
+# 🤖 VaultAI - Chatbot RAG Premium
 
-Ce projet est une application Streamlit qui permet d'interroger des fichiers PDF
-(cours, articles, rapports, etc.) à l'aide d'un pipeline RAG (Retrieval Augmented Generation)
-basé sur :
-- SentenceTransformer (CamemBERT) pour les embeddings
-- FAISS pour la recherche vectorielle
-- Groq (LLaMA 3) pour la génération de réponse
+Assistant intelligent basé sur le pipeline **RAG (Retrieval Augmented Generation)** utilisant **ChromaDB** et **Groq (LLaMA 3.1)**.
 
-## Installation
+## 🚀 Fonctionnalités
+- **Persistence** : Stockage vectoriel persistant via ChromaDB (dossier `./chroma_db`).
+- **Interface Premium** : Design moderne avec bulles de chat animées et glassmorphism.
+- **Réglages IA** : Température et Top-K ajustables en temps réel.
+- **Pipeline Transparent** : Visualisation des étapes d'indexation et citation des sources.
+- **Paramètres de Chunking** : Configuration personnalisée du découpage des documents.
 
+## 🛠️ Installation
+
+1. **Cloner le projet** :
+   ```bash
+   git clone https://github.com/wassima-azzouzi/rag.git
+   cd rag
+   ```
+
+2. **Créer un environnement virtuel** :
+   ```bash
+   python -m venv .venv
+   .venv\Scripts\activate  # Windows
+   ```
+
+3. **Installer les dépendances** :
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Configuration** :
+   Créez un fichier `.env` à la racine :
+   ```env
+   GROQ_API_KEY=votre_cle_groq
+   ```
+
+## 🏃 Lancement
 ```bash
-python -m venv .venv
-source .venv/bin/activate  # ou .venv\Scripts\activate sous Windows
-
-pip install -r requirements.txt
+streamlit run app.py
 ```
 
-## Configuration
-
-Crée un fichier `.env` ou exporte la variable d'environnement suivante :
-
-```bash
-export GROQ_API_KEY=TA_CLE_GROQ_ICI
-```
-
-ou sous Windows (PowerShell) :
-
-```powershell
-$env:GROQ_API_KEY="TA_CLE_GROQ_ICI"
-```
-
-## Lancer l'application
-
-```bash
-streamlit run app_rag_chat.py
-```
-
-Ensuite, ouvre l'URL locale fournie par Streamlit dans ton navigateur.
-
-1. Charge un ou plusieurs PDF dans la barre latérale
-2. Clique sur **Construire / Recharger l'index**
-3. Pose ta question dans la zone de texte (style ChatGPT)
+## 📖 Utilisation
+1. Chargez vos fichiers PDF dans la barre latérale.
+2. Réglez la taille des morceaux (Chunks) si besoin.
+3. Cliquez sur **✨ Indexer**.
+4. Posez vos questions !
