@@ -1,0 +1,10 @@
+streamlit
+sentence-transformers
+faiss-cpu
+PyPDF2
+openai
+numpy
+chromadb
+python-dotenv
+langchain-community
+langchain-huggingface
